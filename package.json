@@ -21,6 +21,7 @@
     "lodash": "3.10.1",
     "mssql": "2.x.x",
     "mysql": "2.x.x",
+    "oracle": "0.x.x",
     "newline": "0.0.3",
     "pg": "4.x.x",
     "pg.js": "4.x.x"
