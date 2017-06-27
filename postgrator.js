@@ -179,7 +179,7 @@ var getCurrentVersion = function (callback) {
 		if (err) { // means the table probably doesn't exist yet. To lazy to check.
 			console.error('something went wrong getting the Current Version from the ' + config.schemaTable + ' table');
 		} else {
-			if (result.rows.length > 0) currentVersion = result.rows[0].version;
+			if (result && result.rows && result.rows.length > 0) currentVersion = result.rows[0].version;
 			else if (result && result.length > 0) currentVersion = result[0].version;
 			else currentVersion = 0;
 		}
