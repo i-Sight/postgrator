@@ -1,5 +1,5 @@
 {
-  "name": "postgrator",
+  "name": "@isight/postgrator",
   "version": "4.0.0",
   "author": "Rick Bergfalk <rick.bergfalk@gmail.com>",
   "description": "Postgrator is a SQL migration tool for SQL people",
