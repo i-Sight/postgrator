@@ -35,7 +35,6 @@
 var _ = require('lodash');
 var fs = require('fs');
 var crypto = require('crypto');
-var Promise = require('knex/lib/promise');
 var createCommonClient = require('./lib/create-common-client.js');
 
 var commonClient;
