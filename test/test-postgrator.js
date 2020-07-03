@@ -1,8 +1,12 @@
 var assert = require('assert');
 var async = require('async');
 
+var DB_USER = process.env.DB_USER || 'postgrator';
+var DB_PASS = process.env.DB_PASS || 'postgrator';
+var DB_NAME = process.env.DB_NAME || 'postgrator';
+
 var tests = [];
-var pgUrl = "tcp://postgrator:postgrator@localhost/postgrator";
+var pgUrl = "tcp://" + DB_USER + ":" + DB_PASS + "@localhost/" + DB_NAME;
 
 //process.env.PGSSLMODE = 'require';
 
@@ -147,20 +151,20 @@ buildTestsForConfig({
 	migrationDirectory: __dirname + '/migrations',
 	driver: 'pg.js',
 	host: 'localhost',
-	database: 'postgrator',
-	username: 'postgrator',
-	password: 'postgrator'
+	database: DB_NAME,
+	username: DB_USER,
+	password: DB_PASS,
 });
 
 
-buildTestsForConfig({
-	migrationDirectory: __dirname + '/migrations',
-	driver: 'mysql',
-	host: 'localhost',
-	database: 'test',
-	username: 'root',
-	password: ''
-});
+// buildTestsForConfig({
+// 	migrationDirectory: __dirname + '/migrations',
+// 	driver: 'mysql',
+// 	host: 'localhost',
+// 	database: 'test',
+// 	username: 'root',
+// 	password: ''
+// });
 
 /*
 buildTestsForConfig({
