@@ -1,6 +1,6 @@
 {
   "name": "postgrator",
-  "version": "4.0.0",
+  "version": "5.0.1-isight",
   "author": "Rick Bergfalk <rick.bergfalk@gmail.com>",
   "description": "Postgrator is a SQL migration tool for SQL people",
   "keywords": [
@@ -17,13 +17,14 @@
   },
   "dependencies": {
     "async": "0.2.x",
-    "knex": "0.9.0",
-    "lodash": "3.10.1",
-    "mssql": "2.x.x",
-    "mysql": "2.x.x",
-    "oracle": "0.x.x",
+    "bluebird": "3.7.1",
+    "knex": "0.21.1",
+    "lodash": "4.17.15",
+    "mssql": "3.3.0",
+    "mysql": "2.14.1",
     "newline": "0.0.3",
-    "pg": "4.x.x",
+    "oracle": "0.x.x",
+    "pg": "7.x.x",
     "pg.js": "4.x.x"
   },
   "repository": {
