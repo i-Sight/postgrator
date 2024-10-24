@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "async": "0.2.x",
-    "bluebird": "3.7.1",
-    "knex": "0.21.1",
-    "lodash": "4.17.15",
+    "bluebird": "3.7.2",
+    "knex": "3.1.0",
+    "lodash": "4.17.21",
     "mssql": "3.3.0",
     "mysql": "2.14.1",
     "newline": "0.0.3",
     "oracle": "0.x.x",
-    "pg": "7.x.x",
+    "pg": "8.x.x",
     "pg.js": "4.x.x"
   },
   "repository": {
