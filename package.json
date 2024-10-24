@@ -16,7 +16,7 @@
     "test": "node test/test-postgrator.js"
   },
   "dependencies": {
-    "async": "0.2.x",
+    "async": "3.2.6",
     "bluebird": "3.7.2",
     "knex": "3.1.0",
     "lodash": "4.17.21",
