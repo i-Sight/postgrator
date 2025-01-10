@@ -3,6 +3,7 @@
 A Node.js SQL migration tool using a directory of plain SQL or knex scripts. 
 Supports Postgres, MySQL, and SQL Server.
 
+Case IQ fork
 
 
 ## Usage
