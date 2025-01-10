@@ -1,7 +1,7 @@
 {
   "name": "postgrator",
-  "version": "5.0.1-isight",
-  "author": "Rick Bergfalk <rick.bergfalk@gmail.com>",
+  "version": "5.0.2-caseiq",
+  "author": "Case IQ",
   "description": "Postgrator is a SQL migration tool for SQL people",
   "keywords": [
     "migrator",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rickbergfalk/postgrator.git"
+    "url": "git://github.com/i-Sight/postgrator.git"
   },
   "main": "postgrator"
 }
