@@ -1,6 +1,6 @@
 {
   "name": "postgrator",
-  "version": "5.0.2-caseiq",
+  "version": "5.0.3-caseiq",
   "author": "Case IQ",
   "description": "Postgrator is a SQL migration tool for SQL people",
   "keywords": [
