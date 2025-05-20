@@ -1,7 +1,7 @@
 # Postgrator
 
 A Node.js SQL migration tool using a directory of plain SQL or knex scripts. 
-Supports Postgres, MySQL, and SQL Server.
+Supports Postgres only.
 
 Case IQ fork
 
@@ -40,7 +40,7 @@ var postgrator = require('postgrator');
 postgrator.setConfig({
     migrationDirectory: __dirname + '/migrations', 
     schemaTable: 'schemaversion', // optional. default is 'schemaversion'
-    driver: 'pg', // or pg.js, mysql, mssql, tedious
+    driver: 'pg',
     host: '127.0.0.1',
     database: 'databasename',
     username: 'username',
@@ -82,7 +82,7 @@ For SQL Server, you may optionally provide an additional options configuration. 
 postgrator.setConfig({
     migrationDirectory: __dirname + '/migrations', 
     schemaTable: 'schemaversion', // optional. default is 'schemaversion'
-    driver: 'pg', // or pg.js, mysql, mssql, tedious
+    driver: 'pg',
     host: '127.0.0.1',
     database: 'databasename',
     username: 'username',
@@ -99,11 +99,7 @@ Reference options for mssql for more details: [https://www.npmjs.com/package/mss
 
 ## Compatible Drivers
 
-Acceptable values for **driver** are: pg, pg.js, mysql, tedious, or mssql (the last 2 being MS SQL Server drivers). 
-
-Despite the driver specified, Postgrator will use either pg.js, mysql, or mssql (which is wrapper around tedious) behind the scenes. All these drivers are purely javascript based, requiring no extra compilation. 
-
-
+Acceptable values for **driver** are: pg. 
 
 ## Version 2.0 Notes
 
@@ -138,7 +134,7 @@ Line feeds: Unix/Mac uses LF, Windows uses 'CRLF', this causes problems for post
 ```
 postgrator.setConfig({
     migrationDirectory: __dirname + '/migrations', 
-    driver: 'pg', // or pg.js, mysql, mssql, tedious
+    driver: 'pg',
     host: '127.0.0.1',
     database: 'databasename',
     username: 'username',

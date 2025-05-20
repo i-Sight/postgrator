@@ -16,7 +16,7 @@ tests.push(function (callback) {
 	console.log('\n----- testing original api to 003 -----');
 	var postgrator = require('../postgrator.js');
 	postgrator.setConfig({
-        driver: 'pg.js',
+        driver: 'pg',
         migrationDirectory: __dirname + '/migrations',
         connectionString: pgUrl
     });
@@ -30,7 +30,7 @@ tests.push(function (callback) {
 	console.log('\n----- testing original api to 000 -----');
 	var postgrator = require('../postgrator.js');
 	postgrator.setConfig({
-        driver: 'pg.js',
+        driver: 'pg',
         migrationDirectory: __dirname + '/migrations',
         connectionString: pgUrl
     });
@@ -149,33 +149,13 @@ var buildTestsForConfig = function (config) {
 
 buildTestsForConfig({
 	migrationDirectory: __dirname + '/migrations',
-	driver: 'pg.js',
+	driver: 'pg',
 	host: 'localhost',
 	database: DB_NAME,
 	username: DB_USER,
 	password: DB_PASS,
 });
 
-
-// buildTestsForConfig({
-// 	migrationDirectory: __dirname + '/migrations',
-// 	driver: 'mysql',
-// 	host: 'localhost',
-// 	database: 'test',
-// 	username: 'root',
-// 	password: ''
-// });
-
-/*
-buildTestsForConfig({
-	migrationDirectory: __dirname + '/migrations',
-	driver: 'tedious',
-	host: '127.0.0.1',
-	database: 'Utility',
-	username: 'testuser',
-	password: 'testuser'
-});
-*/
 
 /* Run the tests in an asyncy way
 ============================================================================= */
