@@ -20,12 +20,8 @@
     "bluebird": "3.7.2",
     "knex": "3.1.0",
     "lodash": "4.17.21",
-    "mssql": "3.3.0",
-    "mysql": "2.14.1",
     "newline": "0.0.3",
-    "oracle": "0.x.x",
-    "pg": "8.x.x",
-    "pg.js": "4.x.x"
+    "pg": "8.x.x"
   },
   "repository": {
     "type": "git",

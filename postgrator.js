@@ -5,7 +5,7 @@
     var postgrator = require('postgrator');
 
     postgrator.setConfig({
-        driver: 'pg', // or pg.js, mysql, mssql, tedious
+        driver: 'pg',
         migrationDirectory: '',
         logProgress: true,
         schemaTable: '', // default is 'schemaversion'
@@ -320,12 +320,12 @@ var getRelevantMigrations = function (currentVersion, targetVersion) {
 				migration.knexjs = require(config.migrationDirectory + '/' + migration.filename)['do'];
 			}
 
-			if ((migration.action == 'do' || migration.action == 'knex') && migration.version > 0 && migration.version <= currentVersion && (config.driver === 'pg' || config.driver === 'pg.js')) {
+			if ((migration.action == 'do' || migration.action == 'knex') && migration.version > 0 && migration.version <= currentVersion && config.driver === 'pg') {
 				migration.md5Sql = 'SELECT md5 FROM ' + config.schemaTable + ' WHERE version = ' + migration.version + ';';
 				relevantMigrations.push(migration);
 			}
 			if ((migration.action == 'do' || migration.action == 'knex') && migration.version > currentVersion && migration.version <= targetVersion) {
-				migration.schemaVersionSQL = config.driver === 'pg' || config.driver === 'pg.js' ? "INSERT INTO "+config.schemaTable+" (version, name, md5) VALUES (" + migration.version + ", '" + migration.name + "', '" + migration.md5 + "');" : "INSERT INTO " + config.schemaTable + " (version) VALUES (" + migration.version + ");";
+				migration.schemaVersionSQL = config.driver === 'pg' ? "INSERT INTO "+config.schemaTable+" (version, name, md5) VALUES (" + migration.version + ", '" + migration.name + "', '" + migration.md5 + "');" : "INSERT INTO " + config.schemaTable + " (version) VALUES (" + migration.version + ");";
 				relevantMigrations.push(migration);
 			}
 		});
@@ -410,7 +410,7 @@ function prep (callback) {
 			callback(err);
 		} else {
 			if ((result.rows && result.rows.length > 0) || (result && result.length > 0)) {
-				if (config.driver === 'pg' || config.driver === 'pg.js') {
+				if (config.driver === 'pg') {
 					// config.schemaTable exists, does it have the md5 column? (PostgreSQL only)
 					runQuery("SELECT column_name, data_type, character_maximum_length FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = '" + config.schemaTable + "' AND column_name = 'md5';", function (err, result) {
 						if (err) {
